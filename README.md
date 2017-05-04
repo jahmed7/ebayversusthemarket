@@ -32,7 +32,7 @@ y = ebaysp$Ebay - ebaysp$Tbill3wk
 beta_hat = solve(t(X)%*%X)%*%t(X)%*%y
 beta_hat
 ```
-#As a linear regression model, I chose to solve for the variable, beta hat (β̂), using matrices.  β̂ is equal to the fraction of total variance accounted for by regressing the risk asset of eBay with our explanatory varaiable (the S&P500 index). This means our equation for beta hat is β̂ =(X′X)−1X′y. Essentially, we are taking the two columns from our csv file, and turning them into matrices which we can then use to solve β̂. It tells us the variance that is associated by the index of the market, which orgiinally is hypothesized to be low. This helps answer one of my original questions which was how correlated the two securities are relative to one another and the control.
+#As a linear regression model, I chose to solve for the variable, beta hat (β̂), using matrices.  β̂ is equal to the fraction of total variance accounted for by regressing the risk asset of eBay against our explanatory varaiable (the S&P500 index). This means our equation for beta hat is β̂ =(X′X)−1X′y. Essentially, we are taking the two columns from our csv file, and turning them into matrices which we can then use to solve β̂. It tells us the variance that is associated by the index of the market, which orginally was hypothesized to be low. This helps answer one of my original questions which was how correlated the two securities are relative to one another and the control.
 
 ```
 plot(x = as.Date(ebaysp$Date, "%m/%d/%y"), y = ebaysp$Ebay,type = 'l', col='blue',ylim=c(-10,15))
